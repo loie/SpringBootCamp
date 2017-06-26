@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.tutorials</groupId>
+    <artifactId>spring-boot</artifactId>
+    <version>0.1.0</version>
+
+    <!--
+        Wenn man spring-boot als Parent-POM nutzt werden gewisse Standard-Settings vorgenommen.
+        Es gibt auch einen alternativen Weg. Dieser hier reicht vorerst. Später werden wir das aufteilen.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--
+            Ohne besondere Einstellungen wird das hier als Tomcat starten. Konkret als embedded tomcat.
+            Später probieren wir auch mal einen anderen Server als Grundlage aus.
+        -->
+    </dependencies>
+
+    <properties>
+        <!-- Das Property wird vom spring-boot-starter-parent genutzt. -->
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--
+         Im <build> kann man Build-Spezifika hinterlegen. Bspw. welche Plugins genutzt werden sollen, oder welche
+         grundlegenden Verzeichnisstrukturen.
+         https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+         https://maven.apache.org/settings.html
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
