@@ -2,7 +2,7 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependecies {
+    dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
     }
 }
@@ -35,7 +35,7 @@ dependencies {
     }
     compile ("org.springframework.boot:spring-boot-starter-jetty")
     // end:jetty[]
-    // tag:atuator[]
+    // tag:actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end:actuator[]
     testCompile("junit:junit")
