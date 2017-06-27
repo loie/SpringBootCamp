@@ -1,11 +1,11 @@
-package lm
+package de.tutorials.springboot
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-open class Application
+open class Server
 
 fun main(args: Array<String>) {
-    SpringApplication.run(Application::class.java, *args)
+    SpringApplication.run(Server::class.java, *args)
 }

@@ -23,5 +23,7 @@ hs_err_pid*
 
 target/
 .idea/
+.gradle
 .DS_Store
 *.iml
+build
