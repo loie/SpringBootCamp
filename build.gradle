@@ -39,7 +39,7 @@ dependencies {
     }
     compile ("org.springframework.boot:spring-boot-starter-jetty")
     // end:jetty[]
-    testCompile 'junit:junit'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 
     // compile ("org.springframework.boot:spring-boot-starter-web") {
     //     exclude module: "spring-boot-starter-tomcat"
