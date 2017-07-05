@@ -10,18 +10,24 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
 
 import de.tutorials.springboot.model.GreetModel
+import de.tutorials.springboot.service.GreetService
 
 @RestController
-public class GreetController {
-
+public class GreetController (val service: GreetService) {
 
     @GetMapping("/greet")
-    fun greet() = greetName("World")
+    fun greet() : GreetModel {
+        return greetName("World")
+    }
 
 
     @GetMapping("/greet/{name}")
-    fun greetName(@PathVariable name: String) = GreetModel("Hallo $name")
+    fun greetName(@PathVariable name: String) : GreetModel {
+        return service.greet(name)
+    }
 
     @PostMapping("/greet")
-    fun save(@RequestBody model: GreetModel)  = GreetModel(model.someText + (" copy"), !model.someBoolean, model.someInt+ 1)
+    fun save(@RequestBody model: GreetModel) : GreetModel {
+        return service.greet(model.someText + (" copy"), !model.someBoolean, model.someInt+ 1)
+    }
 }
