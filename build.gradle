@@ -41,7 +41,8 @@ dependencies {
     // end:jetty[]
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile ("org.springframework.boot:spring-boot-starter-jetty")
-    runtime('org.postgresql:postgresql')
+    // compile("com.h2database:h2")
+    compile('org.postgresql:postgresql')
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
