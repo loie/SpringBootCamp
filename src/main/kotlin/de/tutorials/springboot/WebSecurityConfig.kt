@@ -3,15 +3,16 @@ package de.tutorials.springbbot
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
-import org.springframework.web.builders.WebSecurity
-import org.springframework.web.configration.WebSecurityConfigurerAdapter
-import org.springframework.web.configration.EnableWebSecurity
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig : WebSecurityConfigurerAdapter {
+class WebSecurityConfig : WebSecurityConfigurerAdapter () {
+    
     @Override
-    fun configure(HttpSecurity http) {
+    override fun configure(http: HttpSecurity) {
         http
             .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
@@ -26,7 +27,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    fun configureGlobal(AuthenticationManagerBuilder auth) {
+    fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth
             .inMemoryAuthentication()
                 .withUser("user").password("password").roles("USER")
