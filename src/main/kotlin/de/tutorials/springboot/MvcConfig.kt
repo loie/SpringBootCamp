@@ -5,7 +5,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
-class MvcConfig : WebMvcConfigurerAdapter () {
+open class MvcConfig : WebMvcConfigurerAdapter () {
     
     @Override
     override fun addViewControllers(registry: ViewControllerRegistry) {
