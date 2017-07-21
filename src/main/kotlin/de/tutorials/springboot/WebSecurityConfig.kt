@@ -1,4 +1,4 @@
-package de.tutorials.springbbot
+package de.tutorials.springboot
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
@@ -7,12 +7,21 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 
+@Configuration
 @EnableWebSecurity
-class WebSecurityConfig : WebSecurityConfigurerAdapter () {
+open class WebSecurityConfig : WebSecurityConfigurerAdapter () {
     
     @Override
     override fun configure(http: HttpSecurity) {
-        http.authorizeRequests().antMatchers("/", "/home").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout().permitAll()
+        http
+            .authorizeRequests()
+                .antMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .formLogin()
+                .loginPage("/login").permitAll()
+            .and()
+                .logout().permitAll()
     }
 
     @Autowired
