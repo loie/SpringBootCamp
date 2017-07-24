@@ -9,7 +9,4 @@ import de.tutorials.springboot.model.Customer;
 // CRUD refers Create, Read, Update, Delete
 
 @Repository
-interface CustomerRepository : CrudRepository<Customer, Long> {
-
-    fun findByLastName(lastName: String): Iterable<Customer>
-}
+interface CustomerRepository : CrudRepository<Customer, Long>

@@ -31,6 +31,6 @@ class MainController {
     @GetMapping("/findbyid/{id}")
     fun findById(@PathVariable id: Long) = repository.findOne(id)
 
-    @GetMapping("/findbylastname/{lastName}")
-    fun findByLastName(@PathVariable lastName: String) = repository.findByLastName(lastName)
+    // @GetMapping("/findbylastname/{lastName}")
+    // fun findByLastName(@PathVariable lastName: String) = repository.findByLastName(lastName)
 }

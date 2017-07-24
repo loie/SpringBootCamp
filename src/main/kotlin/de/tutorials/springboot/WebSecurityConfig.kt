@@ -1,3 +1,4 @@
+/*
 package de.tutorials.springboot
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -28,4 +29,4 @@ open class WebSecurityConfig : WebSecurityConfigurerAdapter () {
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth.inMemoryAuthentication().withUser("user").password("password").roles("USER")
     }
-}
+} */
